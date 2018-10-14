@@ -35,9 +35,23 @@
 
 ### Escaping inputs with React
 <p>1) React escapes any strings embedded within JSX</p>
-<p>2) Everything converts into a string before it renders</p>    
+<p>2) Everything converts into a string before it renders</p>   
+Example - see components EscapeInput.js 
 
 #### DangerouslySetInnerHTML
 
 <p>There are some cases where we want to render user input as HTML within our component.</p>
 <p>React having a property called dangerouslySetInnerHTML that has the ability to take user input and strings and directly render it as JSX within the react component.</p>
+Example - see components DangerousHTML.js
+
+#### User-Supplied attributes
+<p>Apart from input element we have an anchor tag that generates links to another page</p>
+<p>The anchor tag <a/> generates links</p>
+<p>Example - see component UserHref.js</p>
+<p>Write javascript:alert(document.cookie) in input box and click you will see the cookies got fetched.</p>
+
+### The Dangers of Eval()
+<p>Eval is an exteremly powerful medium javascript function that takes a string and evaluated as javascript code.</p>
+<p>Dangerous with user-supplied strings.</p>
+<p>Runs with the provilege of its caller</p>
+<p>Calling eval is extremly vulnerable to cross-site scripting it evaluates javascript supplied by a user. SO an attacker does't even have to supply script tags to run dangerous code</p>
