@@ -36,3 +36,8 @@
 ### Escaping inputs with React
 <p>1) React escapes any strings embedded within JSX</p>
 <p>2) Everything converts into a string before it renders</p>    
+
+#### DangerouslySetInnerHTML
+
+<p>There are some cases where we want to render user input as HTML within our component.</p>
+<p>React having a property called dangerouslySetInnerHTML that has the ability to take user input and strings and directly render it as JSX within the react component.</p>
