@@ -15,6 +15,10 @@ class Eval extends Component{
         const result = eval(this.state.expression)
         this.setState({result})
     }
+    safEval=()=>{
+        const func= Function(`return(${this.state.expression})`);
+        this.setState({result:func()})
+    }
     render(){
         return(
             <div>
@@ -22,6 +26,7 @@ class Eval extends Component{
                 <input onChange={this.updateExpression}/>
                 <br/>
                 <button onClick={this.vulEval}>Vulnerable Evaluate</button>
+                <button onClick={this.safEval}>Safe Evaluate</button>
                 <h4>Result:{this.state.result}</h4>
             </div>
         )

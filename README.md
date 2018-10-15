@@ -55,3 +55,43 @@ Example - see components DangerousHTML.js
 <p>Dangerous with user-supplied strings.</p>
 <p>Runs with the provilege of its caller</p>
 <p>Calling eval is extremly vulnerable to cross-site scripting it evaluates javascript supplied by a user. SO an attacker does't even have to supply script tags to run dangerous code</p>
+
+### SafeEval
+<p>We can avoid dangerous eval function by using the native function that create its own isolate scope and we can avoid the access of private variables</p>
+<p>Code editor like jsfiddle or codepen prevent access attacks by the solution of same origin policy</p><p>
+ To prevent accessing sensitive data on the main domain for the application online tools will run the user supplied scripts and code on another domain separately located domain will usially be a server that does the job of executing the code and evaluating it</p>
+
+
+ <p><b>Good solution to prevent XSS <b>is by having a seperate server and domain to run the user supplied code from where the user actually supplies it ensure that sensitive data that exists on the main domain cannot reachedby attacker </p>
+
+
+ #### Same-origin Policy 
+ <p>It enforces script execution occur only with the same origin.</p>
+ <p>It helps prevent malicious scripts from executing within an open tab on user's web browser where they might be logged into a sensitive account.</p>
+<p><b>Origin - It is composed of three elements </b></p>
+<p>Hostname of the website</p>
+<p>port number of the website- w80 for http 443 for https</p>
+<p>URI Scheme of the page - URI scheme contains more information including the current user, their path and any other fragments of the information </p>
+
+#### How to remove Vulerabilities
+<p>Remove unused dependencies, and components</p>
+<p>Track the versions of components to keep them up-to date</p>
+<p>Use components that you can trust</p>
+
+### Cross-site Request Forgery(CSRF)
+
+<p>CSRF forces a victim to execute unwanted actions</p>
+<p>Actions include changing personal info or making transfers</p>
+<p>A CSRF attack occur while the victim is authenticated</p>
+<p>CSRF target state changing requests(modifying password, email addresses etc.). They are not the simple theif behind the cookie data but they execute a request on behalf of an authenticate user</p>
+
+#### Broken authentication
+<p>It occurs when an attacker gains access to a victims account in a web application due to weakness in the sign up or log in system of the app</p>
+<p>Permits many requests, leading to brute force guessing of username and password exists in the systems</p>
+<p>Allows weak password that are easily guessable</p>
+<p>Systems lacks multi-factor authentication that require additional verification on behalf of user like confirming a code sent through a text message</p>
+
+### Broken Authentication Prevention 
+<p>Enforce limits on password guess and delays on authentication requests</p>
+<p>Implement weak password checks</p>
+<p>Add mutli-factor authentication</p>

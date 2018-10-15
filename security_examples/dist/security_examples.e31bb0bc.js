@@ -18668,6 +18668,14 @@ function (_Component) {
       });
     };
 
+    _this.safEval = function () {
+      var func = Function("return(".concat(_this.state.expression, ")"));
+
+      _this.setState({
+        result: func()
+      });
+    };
+
     _this.state = {
       expression: '',
       result: ''
@@ -18682,7 +18690,9 @@ function (_Component) {
         onChange: this.updateExpression
       }), _react.default.createElement("br", null), _react.default.createElement("button", {
         onClick: this.vulEval
-      }, "Vulnerable Evaluate"), _react.default.createElement("h4", null, "Result:", this.state.result));
+      }, "Vulnerable Evaluate"), _react.default.createElement("button", {
+        onClick: this.safEval
+      }, "Safe Evaluate"), _react.default.createElement("h4", null, "Result:", this.state.result));
     }
   }]);
 
